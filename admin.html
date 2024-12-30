@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js"></script>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: url('/sport1.png');
+        background-size: cover;
+        color: #333;
+        backdrop-filter: blur(1px);
+    }
+    header {
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    main {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+    main h2 {
+        text-align: center;
+        color: #fff;
+    }
+    form {
+        width: 100%;
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    input {
+        padding: 1.2rem;
+        margin: 0.8em 0;
+        font-size: 1rem;
+        border-radius: 14px;
+        align-items: center;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    button {
+        margin: 1rem;
+        font-size: 1.3rem;
+        border-radius: 14px;
+        border-color: #fff;
+        align-items: center;
+    }
+    ul {
+        width: 100%;
+        max-width: 300px;
+        padding: 0;
+        list-style: none;
+    }
+    li {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        background: #fff;
+        border: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+    </header>
+    <main>
+        <section id="loginSection">
+            <br><br>
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <input type="email" id="adminEmail" placeholder="Email" required><br>
+                <input type="password" id="adminPassword" placeholder="Password" required><br>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+
+        <section id="adminActions" class="hidden">
+            <h2>Manage Sports, Cities, and Areas</h2>
+            <form id="sportsForm">
+                <input type="text" id="sportName" placeholder="Enter Sport Name" required>
+                <button type="submit">Add Sport</button>
+            </form>
+            <ul id="sportsList"><!-- List of sports names gets displayed here --></ul>
+
+            <form id="cityForm">
+                <input type="text" id="cityName" placeholder="Enter City Name" required>
+                <button type="submit">Add City</button>
+            </form>
+            <ul id="citiesList"><!-- List of citites gets displayed here --></ul>
+
+            <form id="areaForm">
+                <input type="text" id="areaName" placeholder="Enter Area Name" required>
+                <button type="submit">Add Area</button>
+            </form>
+            <ul id="areasList"><!-- List of areas gets displayed here --></ul>
+            <button id="logoutBtn">Logout</button>
+        </section>
+    </main>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

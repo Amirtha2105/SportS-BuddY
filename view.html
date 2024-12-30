@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportS BuddY</title>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js"></script>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: url('/sport1.png');
+            background-size:contain;
+            color: #333;
+            backdrop-filter: blur(5px);
+        }
+        header {
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        main {
+            padding: 1em;
+        }
+        main section {
+            text-align: center;
+            font-size: 1.3rem;
+            margin: auto;
+            color: #ffffff;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 1em 0;
+            font-size: 1.2rem;
+        }
+        button {
+            margin-left: 10px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            margin-top: 50px;
+        }
+    </style>
+    <header>
+        <h1>SportS BuddY</h1>
+        <hr style="border: none; border-bottom: 2px solid #ccc; width: 80%; margin: 10px auto;">
+        <hr style="border: none; border-bottom: 2px solid #ccc; width: 80%; margin: 10px auto;">
+    </header>
+    <main>
+        <section id="eventsSection">
+            <h2>Upcoming Events</h2>
+            <ul id="eventsList"></ul>
+            <!-- To display the sports events in the web page (event persistence)-->
+        </section>
+    </main>
+    <script type="module" src="app1.js"></script>
+    <footer>
+        <p>&copy; 2024 SportS BuddY. All rights reserved.</p>
+    </footer>
+</body>
+</html>

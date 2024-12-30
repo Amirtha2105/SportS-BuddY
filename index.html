@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Buddy</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js"></script>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: url('/sport1.png');
+            background-size:contain;
+            color: #333;
+            backdrop-filter: blur(5px);
+        }
+        header {
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        header h2 {
+            font-size: 1.5rem;
+        }
+        main {
+            padding: 2rem;
+        }
+        main section {
+            text-align: center;
+            font-size: 1.3rem;
+            margin: auto;
+            color: #ffffff;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            margin: 0.5em;
+            font-size: 1.3rem;
+            border-radius: 14px;
+            border-color: #fff;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        input {
+            font-size: 1.1rem;
+            width: 25%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 9px;
+            color: #5c5c5c; /* White text */
+        }
+        form p {
+            text-align: center;
+        }
+        form p a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: larger;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            margin-top: 50px;
+        }
+    </style>
+    <header>
+        <h1>SportS BuddY</h1>    
+        <hr style="border: none; border-bottom: 2px solid #ccc; width: 50%; margin: 10px auto;"> 
+        <hr style="border: none; border-bottom: 2px solid #ccc; width: 50%; margin: 10px auto;">
+    </header>
+
+    <main>
+        <section id="loginSection">
+            <h3>Already registered? Click</h3>
+            <button id="loginBtn">Login</button>
+            <button id="logoutBtn">Logout</button>
+        </section>
+        <hr style="border: none; border-bottom: 2px solid #ccc; width: 50%; margin: 10px auto;">
+        <section id="registerSection">
+            <h3>New user? Register here.</h3>
+            <form id="registerForm">
+                <input type="email" id="registerEmail" placeholder="Email" required><br>
+                <input type="password" id="registerPassword" placeholder="Password" required><br>
+                <button type="submit">Register</button>
+                <hr style="border: none; border-bottom: 2px solid #ccc; width: 50%; margin: 10px auto;">
+                <p><a href="admin.html"><strong>Admin Login</strong></a></p>
+            </form>
+        </section>
+
+        <section id="addEventSection" class="hidden">
+            <h2>Add Sports Event</h2>
+            <form id="eventForm">
+                <label for="eventName">Enter the Sport Name:</label><br>
+                <input type="text" id="eventName" placeholder="Event Name" required><br><br>
+
+                <label for="eventLocation">Enter the Event Location:</label><br>
+                <input type="text" id="eventLocation" placeholder="Location" required><br><br>
+
+                <label for="eventTime">Enter the Event Time:</label><br>
+                <input type="datetime-local" id="eventTime" required><br><br>
+
+                <label for="eventDesc">Enter the Event Description:</label><br>
+                <input type="text" id="eventDesc" placeholder="Description" required><br><br>
+
+                <button type="submit">Add Event</button>
+                <br>
+                <p><a href="view.html">View all events here</a></p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SportS BuddY. All rights reserved.</p>
+    </footer>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
